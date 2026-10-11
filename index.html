@@ -92,18 +92,19 @@ button{font:inherit;color:inherit;cursor:pointer}
 /* ---------- SECCIONES ---------- */
 section.block{position:relative;padding:90px 20px;max-width:1180px;margin:0 auto}
 .eyebrow{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
-h2.title{font-family:var(--font-d);font-size:clamp(2rem,6vw,3.4rem);line-height:1.05;margin:10px 0 36px;max-width:16ch}
+h2.title{font-family:var(--font-d);font-size:clamp(2rem,6vw,3.4rem);line-height:1.05;margin:10px 0 36px;max-width:22ch}
 .marquee{overflow:hidden;border-block:1px solid rgba(255,255,255,.12);padding:16px 0;background:#120709}
 .marquee div{display:flex;gap:46px;width:max-content;animation:mq 26s linear infinite;font-family:var(--font-d);font-size:1.6rem;white-space:nowrap}
 .marquee span::after{content:"✦";margin-left:46px;color:var(--accent)}
 @keyframes mq{to{transform:translateX(-50%)}}
 
 .grid{display:grid;gap:18px;grid-template-columns:1fr}
-.card{position:relative;border-radius:26px;overflow:hidden;padding:22px;min-height:420px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--c);isolation:isolate;transform-style:preserve-3d;transition:transform .5s var(--ease),box-shadow .5s;box-shadow:0 20px 50px -25px rgba(0,0,0,.8)}
+.card{position:relative;border-radius:26px;overflow:hidden;padding:0 22px 22px;display:flex;flex-direction:column;background:var(--c);isolation:isolate;transform-style:preserve-3d;transition:transform .5s var(--ease),box-shadow .5s;box-shadow:0 20px 50px -25px rgba(0,0,0,.8)}
 .card::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 35%,rgba(255,255,255,.18),transparent 70%);z-index:-1}
-.card::after{content:"";position:absolute;inset:auto 0 0 0;height:48%;background:linear-gradient(to top,rgba(0,0,0,.62),transparent);z-index:-1}
-.card img{position:absolute;left:50%;top:3%;width:56%;transform:translateX(-50%);filter:drop-shadow(0 24px 28px rgba(0,0,0,.5));transition:transform .7s var(--ease);z-index:-1}
-.card:hover img{transform:translateX(-50%) scale(1.1) rotate(-4deg)}
+.card .pic{display:grid;place-items:center;padding:22px 0 16px}
+.card img{position:static;height:262px;width:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 22px 22px rgba(0,0,0,.5));transition:transform .7s var(--ease)}
+.card:hover img{transform:scale(1.08) rotate(-3deg)}
+.card .txt{margin-top:auto;padding-top:14px;border-top:1px solid rgba(255,255,255,.14)}
 .card h3{font-family:var(--font-d);font-size:1.6rem;margin:0}
 .card p{margin:4px 0 12px;opacity:.85;font-size:.92rem}
 .card .row{justify-content:space-between}
@@ -210,10 +211,10 @@ footer{padding:46px 20px calc(46px + env(safe-area-inset-bottom));text-align:cen
     <span class="eyebrow reveal">La carta</span>
     <h2 class="title reveal" style="--dl:.08s">Cuatro que no fallan</h2>
     <div class="grid">
-      <article class="card reveal" style="--c:linear-gradient(160deg,#9b1d3f,#2a0714)"><img src="img/tarta.png" alt="" loading="lazy" width="300" height="400"><h3>Red Velvet</h3><p>Crema de queso y frambuesa.</p><div class="row"><b>28 €</b><a class="btn add" href="https://wa.me/34600000000?text=Quiero%20una%20tarta%20Red%20Velvet" target="_blank" rel="noopener">Pedir</a></div></article>
-      <article class="card reveal" style="--c:linear-gradient(160deg,#6a35c4,#1c0c3d);--dl:.08s"><img src="img/donut.png" alt="" loading="lazy" width="300" height="400"><h3>Donut Choco</h3><p>Glaseado brillante y virutas.</p><div class="row"><b>2,50 €</b><a class="btn add" href="https://wa.me/34600000000?text=Quiero%20donuts%20de%20chocolate" target="_blank" rel="noopener">Pedir</a></div></article>
-      <article class="card reveal" style="--c:linear-gradient(160deg,#d98a2b,#3d1d07);--dl:.16s"><img src="img/croissant.png" alt="" loading="lazy" width="300" height="400"><h3>Croissant</h3><p>Hojaldre de mantequilla.</p><div class="row"><b>1,90 €</b><a class="btn add" href="https://wa.me/34600000000?text=Quiero%20croissants" target="_blank" rel="noopener">Pedir</a></div></article>
-      <article class="card reveal" style="--c:linear-gradient(160deg,#2fae9b,#08312d);--dl:.24s"><img src="img/macarons.png" alt="" loading="lazy" width="300" height="400"><h3>Macarons</h3><p>Caja de 6 sabores.</p><div class="row"><b>9 €</b><a class="btn add" href="https://wa.me/34600000000?text=Quiero%20una%20caja%20de%20macarons" target="_blank" rel="noopener">Pedir</a></div></article>
+      <article class="card reveal" style="--c:linear-gradient(160deg,#9b1d3f,#2a0714)"><div class="pic"><img src="img/tarta.png" alt="" loading="lazy" width="300" height="400"></div><div class="txt"><h3>Red Velvet</h3><p>Crema de queso y frambuesa.</p><div class="row"><b>28 €</b><a class="btn add" href="https://wa.me/34600000000?text=Quiero%20una%20tarta%20Red%20Velvet" target="_blank" rel="noopener">Pedir</a></div></div></article>
+      <article class="card reveal" style="--c:linear-gradient(160deg,#6a35c4,#1c0c3d);--dl:.08s"><div class="pic"><img src="img/donut.png" alt="" loading="lazy" width="300" height="400"></div><div class="txt"><h3>Donut Choco</h3><p>Glaseado brillante y virutas.</p><div class="row"><b>2,50 €</b><a class="btn add" href="https://wa.me/34600000000?text=Quiero%20donuts%20de%20chocolate" target="_blank" rel="noopener">Pedir</a></div></div></article>
+      <article class="card reveal" style="--c:linear-gradient(160deg,#d98a2b,#3d1d07);--dl:.16s"><div class="pic"><img src="img/croissant.png" alt="" loading="lazy" width="300" height="400"></div><div class="txt"><h3>Croissant</h3><p>Hojaldre de mantequilla.</p><div class="row"><b>1,90 €</b><a class="btn add" href="https://wa.me/34600000000?text=Quiero%20croissants" target="_blank" rel="noopener">Pedir</a></div></div></article>
+      <article class="card reveal" style="--c:linear-gradient(160deg,#2fae9b,#08312d);--dl:.24s"><div class="pic"><img src="img/macarons.png" alt="" loading="lazy" width="300" height="400"></div><div class="txt"><h3>Macarons</h3><p>Caja de 6 sabores.</p><div class="row"><b>9 €</b><a class="btn add" href="https://wa.me/34600000000?text=Quiero%20una%20caja%20de%20macarons" target="_blank" rel="noopener">Pedir</a></div></div></article>
     </div>
   </section>
 
