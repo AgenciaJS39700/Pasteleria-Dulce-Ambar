@@ -99,9 +99,10 @@ h2.title{font-family:var(--font-d);font-size:clamp(2rem,6vw,3.4rem);line-height:
 @keyframes mq{to{transform:translateX(-50%)}}
 
 .grid{display:grid;gap:18px;grid-template-columns:1fr}
-.card{position:relative;border-radius:26px;overflow:hidden;padding:22px;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--c);isolation:isolate;transform-style:preserve-3d;transition:transform .5s var(--ease),box-shadow .5s;box-shadow:0 20px 50px -25px rgba(0,0,0,.8)}
+.card{position:relative;border-radius:26px;overflow:hidden;padding:22px;min-height:420px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--c);isolation:isolate;transform-style:preserve-3d;transition:transform .5s var(--ease),box-shadow .5s;box-shadow:0 20px 50px -25px rgba(0,0,0,.8)}
 .card::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 35%,rgba(255,255,255,.18),transparent 70%);z-index:-1}
-.card img{position:absolute;left:50%;top:6%;width:62%;transform:translateX(-50%);filter:drop-shadow(0 24px 28px rgba(0,0,0,.5));transition:transform .7s var(--ease);z-index:-1}
+.card::after{content:"";position:absolute;inset:auto 0 0 0;height:48%;background:linear-gradient(to top,rgba(0,0,0,.62),transparent);z-index:-1}
+.card img{position:absolute;left:50%;top:3%;width:56%;transform:translateX(-50%);filter:drop-shadow(0 24px 28px rgba(0,0,0,.5));transition:transform .7s var(--ease);z-index:-1}
 .card:hover img{transform:translateX(-50%) scale(1.1) rotate(-4deg)}
 .card h3{font-family:var(--font-d);font-size:1.6rem;margin:0}
 .card p{margin:4px 0 12px;opacity:.85;font-size:.92rem}
